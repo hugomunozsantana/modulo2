@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Operaciones matemáticas</title>
+</head>
+<body>
+	<h1>Tarea en Clases</h1>
+	<h2>4 operaciones básicas</h2>
+
+	<p>valor1: <input type="text" name="sum1" id="s1"></p>
+	<p>valor2: <input type="text" name="sum2" id="s2"></p>
+	<p>resultado: <input type="text" name="rsum" id="rsum"></p>
+	<button onclick="suma();">Suma</button>
+	<button onclick="resta();">Resta</button>
+	<button onclick="multiplicacion();">Multiplicacion</button>
+	<button onclick="division();">División</button>
+
+	
+
+	<script type="text/javascript">
+		function suma(){
+			let s1=document.getElementById('s1').value;
+			let s2=document.getElementById('s2').value;
+			let ss1=parseInt(s1,10);
+			let ss2=parseInt(s2,10);
+			let res=ss1+ss2;
+			document.getElementById('rsum').value=res;
+		}
+		function resta(){
+			let r1=document.getElementById('s1').value;
+			let r2=document.getElementById('s2').value;
+			let rr1=parseInt(r1,10);
+			let rr2=parseInt(r2,10);
+			let res=rr1-rr2;
+			document.getElementById('rsum').value=res;
+		}
+		function multiplicacion(){
+			let m1=document.getElementById('s1').value;
+			let m2=document.getElementById('s2').value;
+			let mm1=parseInt(m1,10);
+			let mm2=parseInt(m2,10);
+			let res=mm1*mm2;
+			document.getElementById('rsum').value=res;
+		}
+		function division(){
+			let d1=document.getElementById('s1').value;
+			let d2=document.getElementById('s2').value;
+			let dd1=parseFloat(d1,10);
+			let dd2=parseFloat(d2,10);
+			let res=dd1/dd2;
+			document.getElementById('rsum').value=res.toFixed(2);
+		}
+
+	</script>
+
+</body>
+</html>
