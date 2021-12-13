@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Promedios</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<h1>Cálculo de promedio</h1>
+	ingrese nota 1: <input type="text" id="n1" name="n1"><br>
+	ingrese nota 2: <input type="text" id="n2" name="n2"><br>
+	ingrese nota 3: <input type="text" id="n3" name="n3"><br>
+	ingrese nota 4: <input type="text" id="n4" name="n4"><br>
+	<button onclick="promedio();">Calcular promedio</button><br>
+	Promedio: <input type="text" name="prom" id="res1">
+	<p id="res2"></p>
+
+	<script type="text/javascript">
+		function promedio(){
+			let n1=document.getElementById('n1').value;
+			let n2=document.getElementById('n2').value;
+			let n3=document.getElementById('n3').value;
+			let n4=document.getElementById('n4').value;
+			let p1=parseInt(n1,10);
+			let p2=parseInt(n2,10);
+			let p3=parseInt(n3,10);
+			let p4=parseInt(n4,10);
+			let prom=(p1+p2+p3+p4)/4;
+			let res="";
+			if(prom>=4) {
+				res="Aprobado";
+			}else{
+				res="Reprobado";
+			}
+			
+			document.getElementById('res2').innerHTML=res;
+			document.getElementById('res1').value=prom;
+
+		}
+
+	</script>
+
+</body>
+</html>
