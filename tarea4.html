@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cálculo IMC</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<div class="container mt-3">
+	<div class="p-3 bg-primary text-white text-center">	
+	<h1>Cálculo IMC</h1>
+	</div>
+	<br>
+	<form>
+		<div class="row">
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Ingrese su peso" id="peso" name="peso">
+			</div>
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Ingrese su estatura" id="est" name="est">
+			</div>
+	
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Resultado IMC" name="imc" id="imc">
+			</div>
+		</div>
+		<br>
+		
+	</form>
+		<div class="d-grid">
+		<button onclick="imc();" class="btn btn-primary btn-block">Calcular IMC</button>
+		</div>
+		<div class="text-center pt-5">
+		<p class="h5" id="res"></p>
+		</div>
+		
+	</div>
+
+	
+	<script type="text/javascript">
+		function imc(){
+			let p1=document.getElementById('peso').value;
+			let p2=document.getElementById('est').value;
+			let e1=parseFloat(p1,10);
+			let e2=parseFloat(p2,10);
+			let t1=e1/(e2*e2);
+			let res="";
+			if (t1<18.5) {
+				res="Peso inferior al normal";
+			}else if (t1>=18.5 && t1<=24.9) {
+				res="Peso normal";
+			}else if (t1>=25.0 && t1<=29.9){
+				res="Peso superior al normal";
+			}else{
+				res="Obesidad";
+			}
+
+			document.getElementById('imc').value=t1.toFixed(1);
+			document.getElementById('res').innerHTML=res;
+		}
+
+	</script>
+
+</body>
+</html>
