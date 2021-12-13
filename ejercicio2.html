@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<p id="txt"></p>
+
+	<script type="text/javascript">
+		var texto="";// aqui declaro variable del criterio
+		var num=12
+		if(num>10) { // de un numero se puede evaluar que sea, mayor que, menor que, igual que y distinto que
+			texto="el numero es: " +num+ " mayor que el criterio";
+		}else if (num>5){
+			texto="el numero es: " +num+ " cumple el segundo criterio";
+		}else{
+			texto="el numero es: " +num+ " menor o igual que el criterio";
+		}
+		/*
+		igual => if(num==10)
+		igual => if(txt=="10") igualdad
+		igual => if(txt==="10") igualdad estricta
+
+		distinto => if(num!=10)
+		distinto => if(txt!="ejemplo")
+
+		mayor que => if(num>10)
+
+		menor que => if(num<10)
+
+		mayor o igual que => if(num>=10)
+
+		menor o igual que => if(num<=10)
+		
+		*/
+		document.getElementById('txt').innerHTML=texto;
+	</script>
+
+</body>
+</html>
