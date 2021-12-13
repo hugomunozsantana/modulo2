@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<p id="txt"></p>
+	<p id="txt2"></p>
+
+	<script type="text/javascript">
+		var texto="";
+		var tex1="9";
+		if(tex1===9){ // igualdad extricta
+			texto="si";
+		}else{
+			texto="no";
+		}
+		document.getElementById('txt').innerHTML=texto;
+
+		if(tex1==9){ // igualdad normal
+			texto="si";
+		}else{
+			texto="no";
+		}
+		document.getElementById('txt2').innerHTML=texto;
+
+	</script>
+
+</body>
+</html>
