@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>Ejemplo de inserción de HTML</h1>
+	<button onclick="agregar();">agregar otro elemento</button><br>
+	<form method="get" action="#">
+	<p id="cont">
+		
+		elemento 1: <input type="text" name="ele1" id="ele1"><br>
+		
+	</p>
+	<input type="submit" name="enviar" value="enviar">
+	</form>
+	<script type="text/javascript">
+		var contenido="elemento 1: <input type='text' name='ele1' id='ele1'><br>";
+		var contador=1;
+		const max=10;
+		function agregar(){
+			if(contador<=max){
+			contador=contador+1;
+			let extra="elemento "+contador+": <input type='text' name='ele"+contador+"' id='ele"+contador+"'><br>";
+			contenido=contenido+extra;
+			document.getElementById('cont').innerHTML=contenido;
+			}else{
+				alert("ingresó la cantidad máxima");
+			}
+		}
+
+		/*
+		    text o undefined  	= text
+		    number o int 		= numeros enteros
+		    boolean o logico	= verdadero o falso // true o false
+		    string o texto 		= cadena de caracteres
+
+		*/
+
+	</script>
+</body>
+</html>
