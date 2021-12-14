@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>Cálculo de IVA</h1>
+	
+	<p>Ingrese Monto Neto: <input type="text" name="bruto" id="bruto"></p><br>
+		
+	<button onclick="iva();">Calcular IVA</button><br><br>
+
+	<p>IVA: <input type="text" name="iva1" id="iva1"></p><br>
+
+	<p>Total IVA incluído: <input type="text" name="iva2" id="iva2"></p><br>
+	
+	<script type="text/javascript">
+		
+		
+		function iva(){
+			const iva=0.19;
+			let i1=document.getElementById('bruto').value;
+			let v1=parseFloat(i1,10);
+			let iva1=v1*iva;
+			let iva2=(v1*iva)+v1;
+
+			document.getElementById('iva1').value=iva1;
+			document.getElementById('iva2').value=iva2;
+			}
+
+	</script>
+</body>
+</html>
