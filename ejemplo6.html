@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>ejemplo de tipos de variable</h1><br>
+	<input type="checkbox" name="est" id="est"><br>
+	<p id="tip"></p>
+	<button onclick="datos();">Evaluar</button>
+
+	<script type="text/javascript">
+		function datos(){
+			let estado=true;//false
+			let check=document.getElementById('est').checked;
+			//alert("valor de checkbox: "+check);
+			if (check) {
+				document.getElementById('tip').innerHTML="verdadero";
+			}else{
+				document.getElementById('tip').innerHTML="falso";
+			}
+		}
+
+	</script>
+
+</body>
+</html>
