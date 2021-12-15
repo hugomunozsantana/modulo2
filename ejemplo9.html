@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>conectores lógicos</h1>
+	<br>
+	<p>
+				son conectores el "y" y el "o"<br>
+				el "y" es inclusivo:<br>
+				<!-- if (x&gt;0 && x&lt;100){ -->
+				if (x>0 && x<100){								<br>
+&nbsp;&nbsp;		alert("cumple la condición...!!!");			<br>
+				}else{											<br>
+&nbsp;&nbsp;		alert("no cumple la condición...!!!");		<br>
+				}												<br>
+	</p>
+	<p>
+				
+				el "o" es optativo:<br>
+				<!-- if (x&gt;0 || x&lt;100){ -->
+				if (x>0 || x<100){								<br>
+&nbsp;&nbsp;		alert("cumple la condición...!!!");			<br>
+				}else{											<br>
+&nbsp;&nbsp;		alert("no cumple la condición...!!!");		<br>
+				}												<br>
+	</p>
+
+	<p>
+		ingrese día:<input type="text" name="dia" id="dia"><br>
+		ingrese mes:<input type="text" name="mes" id="mes"><br>
+		ingrese año:<input type="text" name="agno" id="agno"><br>
+		<button onclick="calcular2();">calcular</button><br>
+		evaluacion:<input type="text" name="eva" id="eva">
+	</p>
+
+	<script type="text/javascript">
+		function calcular(){
+			let mes=document.getElementById('mes').value;
+
+			if(mes==12 || mes==1 || mes==2){
+				document.getElementById('eva').value="verano";
+			}else if(mes==3 || mes==4 || mes==5){
+				document.getElementById('eva').value="otoño";
+			}else if(mes==6 || mes==7 || mes==8){
+				document.getElementById('eva').value="invierno";
+			}else if(mes==9 || mes==10 || mes==11){
+				document.getElementById('eva').value="primavera";
+			}else{
+				document.getElementById('eva').value="mes fuera de rango";
+			}
+		}
+
+		function calcular2(){
+			let mes=document.getElementById('mes').value;
+
+			if(mes>2 && mes<6){// if (mes>=3 && mes<=5)
+				document.getElementById('eva').value="otoño";
+			}else if(mes>=6 && mes<=8){
+				document.getElementById('eva').value="invierno";
+			}else if(mes>=9 && mes<=11){
+				document.getElementById('eva').value="primavera";
+			}else if(mes==12 || (mes>=1 && mes<=2)){
+				document.getElementById('eva').value="verano";
+			}else{
+				document.getElementById('eva').value="mes fuera de rango";
+			}
+		}
+		
+	</script>
+
+
+
+</body>
+</html>
