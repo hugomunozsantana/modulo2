@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<h1>Evaluar con conector lógico 'y'</h1>
+
+	<p>
+		ingrese valor:<input type="text" name="v1" id="v1"><br><br>
+		<button onclick="evaluar();">Evaluar</button><br><br>
+		resultado:<input type="text" name="res" id="res">
+	</p>
+
+ 	<script type="text/javascript">
+ 		function evaluar(){
+ 			let n1=document.getElementById('v1').value;
+ 			let nn1=parseInt(n1,10);
+ 			if(n1>10 && n1<20){
+ 				document.getElementById('res').value='cumple la condición';
+ 			}else{
+ 				document.getElementById('res').value='no cumple la condición';
+ 			}
+ 		}
+
+ 	</script>
+
+</body>
+</html>
