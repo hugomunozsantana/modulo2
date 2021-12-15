@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>Número medio</h1>
+
+	<p>
+		ingrese valor 1:<input type="text" name="uno" id="uno"><br>
+		ingrese valor 2:<input type="text" name="dos" id="dos"><br>
+		ingrese valor 3:<input type="text" name="tres" id="tres"><br>
+		<button onclick="evaluar2();">calcular</button><br>
+		resultado:<input type="text" name="may" id="may">
+	</p> 
+
+	<script type="text/javascript">
+		function evaluar2(){
+		let num1=document.getElementById('uno').value;
+		let num2=document.getElementById('dos').value;
+		let num3=document.getElementById('tres').value;
+		let n1=parseInt(num1,10);
+		let n2=parseInt(num2,10);
+		let n3=parseInt(num3,10);
+
+		if ((n1>n2 && n1<n3) || (n1<n2 && n1>n3)){
+			document.getElementById('may').value='el numero medio es: '+n1;
+		}else if ((n2>n1 && n2<n3) || (n2<n1 && n2>n3)){
+			document.getElementById('may').value='el numero medio es: '+n2;
+		}else{
+			document.getElementById('may').value='el numero medio es: '+n3;
+		}
+	}
+	</script>
+
+</body>
+</html>
