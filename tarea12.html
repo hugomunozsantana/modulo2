@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Multiplicar sumando</title>
+</head>
+<body>
+	<h1>Multiplicacion de dos números</h1>
+	<br>
+	<p>
+		Ingrese valor 1: <input type="text" name="v1" id="v1"><br>
+		Ingrese valor 2: <input type="text" name="v2" id="v2"><br>
+		<button onclick="multiplicar();">calcular</button><br>
+		Resultado: <input type="text" name="res" id="res"><br>
+	</p>
+
+	<script type="text/javascript">
+
+		function multiplicar(){
+ 			var res=0;i=1;	
+			let v1=document.getElementById('v1').value;
+			let v2=document.getElementById('v2').value;		
+			let n1=parseInt(v1,10);
+			let n2=parseInt(v2,10);		
+			while (i<=n1){ 
+				res=res+n2;
+				i++;
+				
+			}		
+			document.getElementById('res').value=res;
+		}
+	</script>
+
+
+
+</body>
+</html>
