@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>bucles</h1>
+	<br>
+	<p>
+		<button onclick="repetir04();">activar</button>
+	</p>
+
+	<script type="text/javascript">
+
+		function repetir06(){
+			let x=1;
+			let v1=parseInt(prompt("ingrese numero"));
+			do{
+				let vv1=v1*x;
+				document.write(v1+" * "+x+" = "+vv1+" <br> ");
+				x++;
+			}while (x<11);
+		}
+
+		function repetir05(){
+			let x=1
+			let v1=prompt("ingrese numero");
+			while (x<11){
+				let vv1=v1*x;
+				document.write(v1+" * "+x+" = "+vv1+" <br> ");
+				x++;
+			}
+		}
+
+		function repetir04(){	
+			let v1=prompt("ingrese numero");				
+			for (let i = 1; i <11; i++) { 
+				let res=v1*i;
+				document.write(v1+" * "+i+" = "+res+"<br>");
+			}		
+			document.write("_____________________________________________<br>")
+		}
+
+		function repetir03(){
+			let x="s";
+			let acum1=0;
+			let acum2=0;
+			while(x=="s"){
+				let v1=parseInt(prompt("ingrese valor"));
+				acum1++;
+				acum2=acum2+v1;
+				x=prompt("desea seguir ingresando valores(s/n):")
+				if (x!="s"){
+					alert("salir del bucle");
+				}
+			}
+			document.write("cantidad de valores: "+acum1+"<br>");
+			document.write("suma de valores: "+acum2+"<br>");
+			document.write("promedio: "+(acum2/acum1)+"<br>");
+		}
+
+
+
+
+		function repetir02(){
+			let x=0;
+			while(x<4){
+				let v1=prompt("ingrese valor");
+				if (v1>20){
+					x=v1;
+					alert("salir del bucle");
+				}
+				document.write("iteración: "+x+"<br>");
+				x++;
+			}
+		}
+
+
+		function repetir01(){							
+			for (let i = 0; i <4; i++) { 
+				let agno=prompt("ingrese año");
+				let resto=(parseInt(agno)%4);
+				alert("resto: "+resto);
+				if(resto==0){
+					document.write("año bisiesto<br>");
+				}else{
+					document.write("año normal<br>");
+				}
+				/*document.write("iteración: "+i+"<br>");
+				alert("valor de variable 'i': "+i);*/
+			}
+			document.write("fin de ciclo for");
+		}		
+
+
+
+	</script>
+
+	<!-- i++ significa que se incrementa sumandole 1 
+		 i-- significa que le resta 1 al valor de i
+		 i=i+2 sumandole 2 al valor de i
+	-->
+
+</body>
+</html>
