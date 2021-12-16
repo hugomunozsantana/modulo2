@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Multiplicación de dos números</title>
+</head>
+<body>
+
+	<h1>Multiplicacion de dos números</h1>
+	<br>
+	<p>
+		<button onclick="multiplicar();">activar</button>
+	</p>
+		
+
+	<script type="text/javascript">
+
+		function multiplicar(){
+ 			var res=0;i=1;	
+			let v1=parseInt(prompt("ingrese valor 1"));
+			let v2=parseInt(prompt("ingrese valor 2"));				
+			while (i<=v2){ 
+				res=res+v1;
+				i++;
+			}		
+			document.write("total = "+res);
+		}
+		function multiplicar2(){
+ 			var res=0;	
+			let v1=parseInt(prompt("ingrese valor 1"));
+			let v2=parseInt(prompt("ingrese valor 2"));				
+			for (let i = 1; i <=v2; i++){ 
+				res=res+v1;
+			}		
+			document.write("total = "+res);
+		}
+
+	</script>
+</body>
+</html>
