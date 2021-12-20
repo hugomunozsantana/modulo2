@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<h1>Buscar nombre</h1>
+	  	<br>
+	  	<p>
+	  		Ingrese nombre: <input type="text" name="nom" id="nom"><br>
+	  		<button onclick="agregar();">agregar</button><br>
+	  		Buscar nombre: <input type="text" name="nom1" id="nom1"><br>
+	  		<button onclick="buscar();">buscar</button><br>
+	  		<p id="res"></p>
+	  		<p id="lista"></p>
+	  		
+	  	</p>
+
+ <script type="text/javascript">
+ 	let nomina=[]; 
+ 	function agregar(){
+ 					
+ 					let v1=document.getElementById("nom").value;
+					nomina.push(v1);
+					document.getElementById("nom").value="";
+					mostrar();
+ 					
+ 	}
+
+
+	function mostrar(){
+			let fragmento="";
+			fragmento="<table border='1'>";
+			for (var i = 0; i < nomina.length; i++){
+ 				fragmento+="<tr><td>"+i+" - "+nomina[i]+"</td></tr>";
+ 				
+			}
+			fragmento+="</table>";	
+			document.getElementById('lista').innerHTML=fragmento;
+		}
+
+		function buscar(){
+
+			let i=1;
+			let v1=parseInt(document.getElementById('nom1').value);
+			while (i<nomina.length){
+				if (nomina[i]!=v1) {
+					i++;
+				}else{
+					document.getElementById('res').innerHTML="El nombre buscado existe";
+				}
+				document.getElementById('res').innerHTML="el nombre buscado no existe";
+			}
+		}
+
+ </script>
+ 
+</body>
+</html>
