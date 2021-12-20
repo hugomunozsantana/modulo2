@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Bodega</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	 crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container pt-3">
+		<div class="text-center">
+			<h1> Bodega de Juan</h1> <br>
+      <br>
+    </div>
+    <div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Nombre item</th>
+        <th>Familia</th>
+        <th>Valor (en pesos)</th>
+        <th>Cantidad</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input required type="text" name="nomprod" id="nomprod"></td>
+          <td><input required type="text" name="famprod" id="famprod"></td>
+          <td><input required type="number" name="precprod" id="precprod"></td>
+          <td><input required type="number" name="cantprod" id="cantprod"></td>
+        </tr>
+        <tr>
+          <td colspan="2"><div style="text-align:center"><strong>TOTALES</strong></div></td>
+          <td><strong><span id="totalPrecio" name="totalPrecio"></strong></span></td>
+          <td><strong><span id="totalCantidad" name="totalCantidad"></strong></span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" onclick="ingresar();">Ingresar</button>
+      </div>
+    </div>
+    </div>
+    <div  class="container mt-3" style="background-color: black; color: chartreuse; font-family: 'Courier New', Courier, monospace;">
+      <h4>Consola de super jaquer 5000 marca AliExpress</h4>
+    <p id="ar" class="table table-striped">
+    </p>
+    </div>
+    <script type="text/javascript">
+    var nombre=[];
+    var fam=[];
+    var vunitario=[];
+    var cant=[];
+    function ingresar(){
+      let newnombre=document.getElementById('nomprod').value;
+      let newfam=document.getElementById('famprod').value;
+      let newprecio=document.getElementById('precprod').value;
+      let newcantidad=document.getElementById('cantprod').value;
+        nombre.push(newnombre);
+        document.getElementById('nomprod').value="";
+        fam.push(newfam);
+        document.getElementById('famprod').value="";
+        vunitario.push(newprecio);
+        document.getElementById('precprod').value="";
+        cant.push(newcantidad);
+        document.getElementById('cantprod').value="";
+        llenar();
+        prodEnBodega();
+        totEnBodega();
+    }    
+    function llenar(){
+            let fragmento="";
+            fragmento="<table border=1 style='color:lightgreen'><tr><th>Registro |</th><th>Nombre |</th><th>Familia |</th><th>Valor Unitario |</th><th>Cantidad</th></tr>";
+            for (var i=0; i< nombre.length; i++){
+                  fragmento+="<tr><td>"+i+"</td><td>"+nombre[i]+"</td><td>" +fam[i]+"</td><td>"+vunitario[i]+"</td><td>"+cant[i] +"</td></tr>";
+            }
+            fragmento+="</table>";
+            document.getElementById('ar').innerHTML=fragmento;
+        }
+    function prodEnBodega(){
+      let totprods=0;
+      for (var p=0;p<cant.length; p++){
+          let pv=parseInt(cant[p],10);
+          totprods=totprods+pv;
+          document.getElementById('totalCantidad').innerHTML=totprods;
+      }
+    }
+    function totEnBodega(){
+      let totbod=0;
+      for (var q=0;q<vunitario.length;q++){
+        let qv1=parseInt(cant[q],10);
+        let qv2=parseInt(vunitario[q],10);
+        totbod=totbod+(qv1*qv2);
+        document.getElementById('totalPrecio').innerHTML=totbod;
+      }
+    } 
+    </script>
+  </body>
+</html>
