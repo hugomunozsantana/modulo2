@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Valor con IVA</title>
+</head>
+<body>
+	<h1>Calcular IVA</h1>
+
+	Ingrese monto bruto: <input type="text" name="v1" id="v1"><br><br>
+	<button onclick="calcular();">calcular</button>
+	<p id="res"></p>
+
+	<script type="text/javascript">
+		function calcular(){
+			let vv1=document.getElementById('v1').value;
+			document.getElementById('res').innerHTML="El valor a pagar con IVA agregado es: "+iva(vv1).toFixed(2);
+		}
+		function iva(v1){
+			let res=parseInt(v1)*1.19;
+			return res;
+
+		}
+	</script>
+
+</body>
+</html>
