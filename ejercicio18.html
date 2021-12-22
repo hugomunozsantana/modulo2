@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculo de tramo familiar</title>
+</head>
+<body>
+	<h1>Cálculo de bonos</h1>
+
+	Ingrese cargas familiares: <input type="text" name="v1" id="v1"><br><br>
+	<button onclick="calcular();">calcular</button>
+	<p id="res"></p>
+
+	<script type="text/javascript">
+		function calcular(){
+			let vv1=document.getElementById('v1').value;
+			document.getElementById('res').innerHTML=bono(vv1);
+		}
+
+		function bono(v1){
+			let res=0;
+			if (parseInt(v1)>0 && parseInt(v1)<4){
+				res="su bono será de 5%";
+			}else if (parseInt(v1)>3 && parseInt(v1)<7){
+				res="su bono será de 8%";
+			}else if (parseInt(v1)>6 ) {
+				res="su bono será de 10%";
+			}else{
+				res="no te toca bono papá";
+			}
+			return res;
+		}
+
+
+	</script>
+
+</body>
+</html>
