@@ -37,6 +37,16 @@
           <td><strong><span id="totalPrecio" name="totalPrecio"></strong></span></td>
           <td><strong><span id="totalCantidad" name="totalCantidad"></strong></span></td>
         </tr>
+        <tr>
+          <td colspan="2"><div style="text-align:center"><strong>IVA</strong></div></td>
+          <td><strong><span id="iva1" name="iva1"></strong></span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="2"><div style="text-align:center"><strong>TOTAL A PAGAR</strong></div></td>
+          <td><strong><span id="total1" name="total1"></strong></span></td>
+          <td></td>
+        </tr>
       </tbody>
     </table>
     </div>
@@ -70,6 +80,8 @@
         document.getElementById('precprod').value="";
         cant.push(newcantidad);
         document.getElementById('cantprod').value="";
+        document.getElementById('iva1').innerHTML=iva(newprecio,newcantidad);
+        document.getElementById('total1').innerHTML=iva2(newprecio,newcantidad);
         llenar();
         prodEnBodega();
         totEnBodega();
@@ -100,6 +112,16 @@
         document.getElementById('totalPrecio').innerHTML=totbod;
       }
     } 
+    function iva(v1,v2){
+      let res=0;
+      res=v1*v2*0.19;
+      return res;
+    }
+    function iva2(v3,v4){
+      let res=0;
+      res=v3*v4*1.19;
+      return res;
+    }
     </script>
   </body>
 </html>
