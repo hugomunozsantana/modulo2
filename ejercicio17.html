@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculo del radio</title>
+</head>
+<body>
+	<h1>retorno de valor de funcion</h1>
+	Ingrese Radio: <input type="text" name="v1" id="v1"><br><br>
+	<button onclick="calcular();">calcular</button>
+	<p id="resul1"></p>
+	<p id="resul2"></p>
+	<p id="resul3"></p>
+
+	<script type="text/javascript">
+		function calcular(){
+			let vv1=document.getElementById('v1').value;
+			document.getElementById('resul1').innerHTML="El diametro del radio es "+diametro(vv1);
+			document.getElementById('resul2').innerHTML="El perimetro del radio es "+perimetro(vv1).toFixed(2);
+			document.getElementById('resul3').innerHTML="El area del radio es "+area(vv1).toFixed(2);
+		}
+		function diametro(v1){
+			let res=parseInt(v1)*2;
+			return res;
+		}
+		function perimetro(v1){
+			let res=2*Math.PI*parseInt(v1);
+			return res;
+		}
+		function area(v1){
+			let res=Math.PI*Math.pow(parseInt(v1),2); 
+			//tambien se puede elevar asi: let res=Math.PI*(parseInt(v1)**2);
+			return res;
+		}
+
+
+	</script>
+
+
+</body>
+</html>
