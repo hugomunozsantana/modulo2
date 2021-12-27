@@ -1,0 +1,107 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<title>bodega de juan 3</title>
+  	<h1>Bodega de Juan</h1>
+ </head>
+ <body>
+
+ 	Nombre: <input type="text" name="nom" id="nombre">
+ 	Familia: <input type="text" name="fam" id="familia">
+ 	Valor unitario: <input type="number" name="val" id="valor"> 
+ 	Cantidad: <input type="number" name="cant" id="cantidad"><br><br>
+ 	<button onclick="agregar();">Agregar</button><br><br>
+ 	Nombre producto a descontar: <input type="text" name="nom2" id="nomDesc">
+ 	Cantidad de productos a descontar: <input type="number" name="cant2" id="cantDesc">
+ 	<button onclick="descontar();">Descontar</button><br><br>
+ 	<p id="res"></p>
+ 	<p id="prodBodega"></p>
+ 	<p id="valExist"></p>
+ 	<p id="valIva"></p>
+ 	<p id="valMasIva"></p> 	
+
+<script type="text/javascript">
+	var nombre=[];
+	var familia=[];
+	var valor=[];
+	var cantidad=[];
+	function agregar(){
+		let ag1=document.getElementById('nombre').value;
+		let ag2=document.getElementById('familia').value;
+		let ag3=document.getElementById('valor').value;
+		let ag4=document.getElementById('cantidad').value;
+		nombre.push(ag1);
+		document.getElementById('nombre').value="";
+		familia.push(ag2);
+		document.getElementById('familia').value="";
+		valor.push(ag3);
+		document.getElementById('valor').value="";
+		cantidad.push(ag4);
+		document.getElementById('cantidad').value="";
+		mostrar();
+		totBodega();
+		valTotal();
+	}
+
+	function mostrar(){
+		let fragmento="";
+		fragmento="<table border='1'>";
+		for (var i=0; i < nombre.length; i++){
+			fragmento+="<tr><td>"+i+"</td><td>"+nombre[i]+"</td><td>"+familia[i]+"</td><td>"+valor[i]+"</td><td>"+cantidad[i]+"</td></tr>";
+		}
+		fragmento+="</table>";
+		document.getElementById('res').innerHTML=fragmento;
+	}
+	function totBodega(){
+		let totalProd=0;
+		for (var p=0;p<cantidad.length;p++) {
+			let tb=parseInt(cantidad[p],10);
+			totalProd+=tb;
+			document.getElementById('prodBodega').innerHTML='La cantidad de productos en bodega es de: '+totalProd;
+		}
+	}
+	function valTotal(){
+		let totValor=0; //1000
+		for (var v=0;v<valor.length; v++) {
+			let v1=parseInt(valor[v],10);
+			let v2=parseInt(cantidad[v],10);
+			let calcIva=0;
+			totValor+=v1*v2;
+			calcIva=calcIva+iva(totValor);
+			document.getElementById('valExist').innerHTML='el valor total de los productos es de: '+totValor;
+			document.getElementById('valIva').innerHTML='el IVA de los productos es de: '+calcIva;
+			document.getElementById('valMasIva').innerHTML='el valor total de los productos mas IVA es de: '+(totValor+calcIva);
+		}
+	}
+	function descontar(){
+		let buscPro=document.getElementById('nomDesc').value; //buscar producto a sacar
+		if (buscar(buscPro,nombre)){
+			let posReg=nombre.indexOf(buscPro);
+			let cantDesc=parseInt(document.getElementById('cantDesc').value);
+			if (cantidad[posReg]>=cantDesc){
+				let cant=cantidad[posReg] - cantDesc;
+				cantidad[posReg]=cant;
+				mostrar();
+				totBodega();
+				valTotal();
+			}else{
+				alert('no hay inventario suficiente para descontar');
+			}
+		}else{
+			alert('no existe el producto buscado');
+		}	
+	}
+	function buscar(columna,arreglo){
+		return(arreglo.indexOf(columna)>-1);
+	}
+	function iva(v1){
+		let res=0;
+		const valorIva=0.19;
+		res=v1*valorIva;
+		return res;
+	}
+</script>
+ </body>
+ </html>
